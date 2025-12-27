@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassmorphism Landing Page</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="background-blobs"></div> <header class="header">
+        <nav class="nav container">
+            <div class="logo">DigitalArts</div>
+            <button class="burger" id="burger" aria-label="Открыть меню">
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#" class="nav-link">About</a></li>
+                <li><a href="#" class="nav-link" id="open-modal">Contact</a></li>
+                <li><button id="theme-toggle" class="theme-btn" aria-label="Переключить тему">Dark Mode</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="glass-card main-card">
+                <span class="badge">New Trend 2025</span>
+                <h1>Creative Design with Glassmorphism</h1>
+                <p>Экспериментируйте с прозрачностью и размытием, чтобы создать глубокий и современный интерфейс.</p>
+                <div class="hero-btns">
+                    <button class="btn-primary">Get Started</button>
+                    <button class="btn-secondary">View Portfolio</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-content glass-card">
+            <h2 id="modal-title">Связаться с нами</h2>
+            <p>Оставьте ваше сообщение в этой форме.</p>
+            <button class="close-modal" id="close-modal">&times;</button>
+        </div>
+    </div>
+
+    <footer class="footer container">
+        <p>&copy; 2025 ИПТИП. Практическая работа №4[cite: 1].</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
