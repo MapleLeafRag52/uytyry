@@ -1,66 +1,75 @@
-/* Основные переменные */
+/* Основные настройки */
 :root {
-    --bg-gradient: linear-gradient(45deg, #0f0c29, #302b63, #24243e);
-    --glass-bg: rgba(255, 255, 255, 0.1);
+    --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --glass-bg: rgba(255, 255, 255, 0.15);
     --glass-border: rgba(255, 255, 255, 0.2);
     --text-color: #ffffff;
-    --accent: #00d2ff;
 }
-
-* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Arial', sans-serif;
     background: var(--bg-gradient);
+    background-attachment: fixed;
     color: var(--text-color);
+    margin: 0;
     min-height: 100vh;
-    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-/* Эффект матового стекла (Glassmorphism) [cite: 29, 30] */
+/* Эффект Glassmorphism [cite: 6, 29] */
 .glass-card {
     background: var(--glass-bg);
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px); /* Размытие фона [cite: 30] */
     -webkit-backdrop-filter: blur(15px);
     border: 1px solid var(--glass-border);
-    border-radius: 24px;
+    border-radius: 20px;
     padding: 40px;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    transition: transform 0.3s ease; /* Микроанимация [cite: 31] */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3); /* Тени [cite: 30] */
+    margin-top: 50px;
 }
 
-.glass-card:hover { transform: translateY(-5px); }
+/* Навигация */
+.header {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--glass-border);
+}
 
-/* Адаптивность Mobile-First [cite: 14, 16] */
-.header { height: 80px; display: flex; align-items: center; }
-.nav { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.nav {
+    display: flex; /* Использование Flexbox  */
+    justify-content: space-between;
+    align-items: center;
+}
 
 .nav-menu {
-    position: fixed;
-    top: -100%;
-    left: 0;
-    width: 100%;
-    background: rgba(0,0,0,0.9);
-    flex-direction: column;
-    text-align: center;
-    transition: 0.5s;
+    display: flex;
     list-style: none;
-    z-index: 10;
+    gap: 20px;
 }
 
-.nav-menu.active { top: 80px; }
-
-/* Десктопная версия (>1200px) [cite: 18] */
-@media (min-width: 1200px) {
-    .nav-menu { position: static; flex-direction: row; background: none; top: 0; }
-    .burger { display: none; }
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s; /* Плавные переходы [cite: 30, 31] */
 }
 
-/* Модальное окно [cite: 24, 35] */
+/* Модальное окно [cite: 24] */
 .modal {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.6); display: none; align-items: center; justify-content: center;
+    display: none; 
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
 }
-.modal.active { display: flex; }
+
+.modal.active {
+    display: flex;
+}
